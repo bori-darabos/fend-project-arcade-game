@@ -8,4 +8,4 @@ Open index.html in your browser. Wait until the game loads.
 The player can move left, right, up and down by arrow keys. The enemies move in varying speeds on the paved block portion of the scene. Try to avoid to collide into any of the enemy bugs.
 
 ## How Game Ends: 
-Once a the player collides with an enemy, the game is reset and the player moves back to the start square. Once the player reaches the water the game is won and all enemies stop moving.
+Once a the player collides with an enemy, the game is reset and the player moves back to the start square. Once the player reaches the water the game is won, all enemies stop moving and alert pops up. You can return to the game by pressing OK in the alert.
