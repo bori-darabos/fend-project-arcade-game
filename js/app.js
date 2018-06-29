@@ -1,5 +1,7 @@
-let modalDisplay = document.getElementById('.modal');
-    modalDisplay.style.display = 'none';
+'use strict'
+
+//End modal
+const modalDisplay = document.getElementById('.modal');
 
 // Enemies our player must avoid
 class Enemy {
@@ -25,12 +27,12 @@ class Enemy {
 
         // Check for collision between player and enemies + collision counter
          
-     if (player.x < this.x + 50 &&
-        player.x + 25 > this.x &&
-        player.y < this.y + 25 &&
-        25 + player.y > this.y) {
-        player.x = 200;
-        player.y = 380;
+        if (player.x < this.x + 50 &&
+            player.x + 25 > this.x &&
+            player.y < this.y + 25 &&
+            25 + player.y > this.y) {
+            player.x = 200;
+            player.y = 380;
         }
 
         //Check if the enemy disappears
@@ -38,7 +40,7 @@ class Enemy {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-};
+}
 
 // Draw the enemy on the screen, required method for game
     render() {
@@ -48,7 +50,7 @@ class Enemy {
         }*/
 
     }
-};
+}
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -81,11 +83,6 @@ class Player {
             this.y = 380;
             winMessage();
         }
-    
-        function winMessage() {
-            modalDisplay.style.display = 'show';
-        };
-    
     }
 
     render() {
@@ -144,86 +141,7 @@ document.addEventListener('keyup', function(e) {
     player.handleInput(allowedKeys[e.keyCode]);
 });
 
-
-
-
-/*    // The player is trying to move the sprite off the fields, 
-    // sprite will get back to the starting field.
-    // The player reaches the top of the screen, 
-    // the player's position is reset to the starting position, 
-    // all the enemies are stopped and an end modal pops up.
-    if(this.y <= -11) {
-        setTimeout(() => {
-            // Return the player to their initial position
-            this.x = 200;
-            this.y = 404;
-
-            // Stop all enemies
-            for(const enemy of allEnemies) {
-                enemy.speed = 0;
-            }
-
-            //Show end modal 
-            this.victory = true;
-            this.render()
-        }, 100);
-    };*/
-
- // The game checks if the sprite moves off the screen. Write it in the handle input function
-
- // Stop the enemies and the player at the end of the game
-
- // https://www.w3schools.com/graphics/game_obstacles.asp
-
- /*     /* <!-- Modal -->
-    <div id="myModal" class="modal">
-        <p>Congratulations! You won!</p>
-    </div> 
-*/
-
-
-/*this.crashWith = function(otherobj) {
-        var myleft = this.x;
-        var myright = this.x + (this.width);
-        var mytop = this.y;
-        var mybottom = this.y + (this.height);
-        var otherleft = otherobj.x;
-        var otherright = otherobj.x + (otherobj.width);
-        var othertop = otherobj.y;
-        var otherbottom = otherobj.y + (otherobj.height);
-        var crash = true;
-        if ((mybottom < othertop) ||
-               (mytop > otherbottom) ||
-               (myright < otherleft) ||
-               (myleft > otherright)) {
-           crash = false;
-        }
-        return crash;
-    }
-
-*/
-
-/*        if (this.y > 380) {
-            this.y = 380;
-        }
-
-        if (this.x > 400) {
-            this.x = 400;
-        }
-
-        if (this.x < 0) {
-            this.x = 0;
-        }
-
-        // Check if player is reach top of the canvas and show end modal
-        if (this.y < 0) {
-            this.x = 200;
-            this.y = 380;
-            winMessage();
-        }
-    
-        function winMessage() {
-            modalDisplay.style.display = 'show';
-        };
-    }
-*/
+// End modal function
+function winMessage() {
+    modalDisplay.style.display = 'visible';
+}
