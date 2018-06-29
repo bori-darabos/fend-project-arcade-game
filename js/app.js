@@ -1,4 +1,3 @@
-'use strict'
 
 //End modal
 const modalDisplay = document.querySelector('.modal');
@@ -81,7 +80,11 @@ class Player {
         if (this.y < 0) {
             this.x = 200;
             this.y = 380;
-                winMessage();
+                
+            // Stop all enemies
+            for(const enemy of allEnemies) {
+                enemy.speed = 0;
+            }
         }
     }
 
@@ -147,3 +150,32 @@ function winMessage() {
         modalDisplay.style.display = 'show';
     }
 }
+
+
+/*    // The player is trying to move the sprite off the fields, 
+    // sprite will get back to the starting field.
+    // The player reaches the top of the screen, 
+    // the player's position is reset to the starting position, 
+    // all the enemies are stopped and an end modal pops up.
+    if(this.y <= -11) {
+        setTimeout(() => {
+            // Return the player to their initial position
+            this.x = 200;
+            this.y = 404;
+
+            // Stop all enemies
+            for(const enemy of allEnemies) {
+                enemy.speed = 0;
+            }
+
+            //Show end modal 
+            this.victory = true;
+            this.render()
+        }, 100);
+    };*/
+
+ // The game checks if the sprite moves off the screen. Write it in the handle input function
+
+ // Stop the enemies and the player at the end of the game
+
+ // https://www.w3schools.com/graphics/game_obstacles.asp
