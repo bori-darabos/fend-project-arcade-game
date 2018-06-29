@@ -154,8 +154,22 @@ function winMessage() {
 }
 
 
- // The game checks if the sprite moves off the screen. Write it in the handle input function
+/*    // The player is trying to move the sprite off the fields, 
+    // sprite will get back to the starting field.
+    // The player reaches the top of the screen, 
+    // the player's position is reset to the starting position, 
+    // all the enemies are stopped and an end modal pops up.
+    if(this.y <= -11) {
+        setTimeout(() => {
+            // Return the player to their initial position
+            this.x = 200;
+            this.y = 404;
 
- // Stop the enemies and the player at the end of the game
+            //Show end modal 
+            this.victory = true;
+            this.render()
+        }, 100);
+    };*/
+
 
  // https://www.w3schools.com/graphics/game_obstacles.asp
