@@ -1,7 +1,7 @@
 'use strict'
 
 //End modal
-const modalDisplay = document.getElementById('.modal');
+const modalDisplay = document.querySelector('.modal');
 
 // Enemies our player must avoid
 class Enemy {
@@ -77,11 +77,11 @@ class Player {
             this.x = 0;
         }
 
-        // Check if player is reach top of the canvas and show end modal
+        // Check if player reaches top of the canvas and show end modal
         if (this.y < 0) {
             this.x = 200;
             this.y = 380;
-            winMessage();
+                winMessage();
         }
     }
 
@@ -143,5 +143,7 @@ document.addEventListener('keyup', function(e) {
 
 // End modal function
 function winMessage() {
-    modalDisplay.style.display = 'visible';
+    if (player.y < 0) {
+        modalDisplay.style.display = 'show';
+    }
 }
