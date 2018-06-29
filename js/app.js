@@ -85,6 +85,8 @@ class Player {
             for(const enemy of allEnemies) {
                 enemy.speed = 0;
             }
+
+            alert("Congratulations! You won.");
         }
     }
 
@@ -151,28 +153,6 @@ function winMessage() {
     }
 }
 
-
-/*    // The player is trying to move the sprite off the fields, 
-    // sprite will get back to the starting field.
-    // The player reaches the top of the screen, 
-    // the player's position is reset to the starting position, 
-    // all the enemies are stopped and an end modal pops up.
-    if(this.y <= -11) {
-        setTimeout(() => {
-            // Return the player to their initial position
-            this.x = 200;
-            this.y = 404;
-
-            // Stop all enemies
-            for(const enemy of allEnemies) {
-                enemy.speed = 0;
-            }
-
-            //Show end modal 
-            this.victory = true;
-            this.render()
-        }, 100);
-    };*/
 
  // The game checks if the sprite moves off the screen. Write it in the handle input function
 
